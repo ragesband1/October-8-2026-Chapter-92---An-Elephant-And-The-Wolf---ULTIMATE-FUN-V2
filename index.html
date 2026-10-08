@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chapter 92 - An Elephant And The Wolf - ULTIMATE FUN V2</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a1f0a;overflow:hidden;font-family:Arial Black,Verdana}
+#story{position:absolute;inset:0;z-index:100;background:linear-gradient(180deg,#1a4a0a,#0a1f0a);overflow:auto;padding:14px;color:#fff}
+.gold{color:#ffff00;text-shadow:0 0 18px #55ff00;font-weight:900}
+.card{background:rgba(0,0,0,.88);border:3px solid #55ff00;border-radius:18px;padding:12px;margin:8px auto;max-width:920px}
+.hud{position:absolute;background:rgba(0,0,0,.92);border:3px solid #55ff00;border-radius:14px;padding:10px;z-index:10;color:#fff;font-weight:900}
+#hudL{top:8px;left:8px;width:360px}
+#hudR{top:8px;right:8px;width:380px;max-height:88vh;overflow:auto;font-size:9px}
+#center{position:absolute;left:50%;top:20%;transform:translateX(-50%);background:#000;border:4px solid #ffff00;color:#ffff00;padding:18px 26px;border-radius:16px;font-size:24px;font-weight:900;z-index:20;display:none;text-align:center;box-shadow:0 0 30px #ffff00}
+button{background:linear-gradient(180deg,#ffff00,#aaff00);color:#000;border:0;padding:20px 38px;border-radius:16px;font-weight:900;cursor:pointer;font-size:22px;box-shadow:0 0 30px #ffff00}
+.bar{height:22px;background:#000;border:2px solid #fff;border-radius:11px;overflow:hidden;margin:6px 0}
+.fill{height:100%;transition:width .2s}
+#controls{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);background:#000;border:2px solid #55ff00;padding:10px 20px;border-radius:12px;color:#55ff00;font-size:12px;z-index:10;text-align:center;font-weight:900}
+</style>
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js"}}</script>
+</head>
+<body>
+<div id="story">
+<div class="card">
+<h2 class="gold" style="text-align:center;font-size:26px">🐘 Chapter 92: An Elephant And The Wolf - ULTIMATE FUN V2 🐺</h2>
+<p style="text-align:center;color:#55ff00;font-weight:900;font-size:13px">Mighty Forest Strongest Animal Last Animal Wolf Planned Attacked Dinner Competition</p>
+<div style="white-space:pre-wrap;font-size:9px;line-height:1.3;background:rgba(0,0,0,.6);padding:10px;border-radius:10px;color:#bbffaa;margin:8px 0">
+Once upon a time there lived a mighty forest. There lived "An Elephant And The Wolf". And when the elephant is the strongest animal and the last animal in the mighty forest. Suddenly the strange living creature which is the wolf planned to attacked a last elephant. To make it as a dinner. The elephant approaches also the wolf. An Elephant said, Hey you! Wolf why are you attacking me! What is your intention for? Wolf said, I want to eat you for dinner. And when the reason have nothing to say. They only revenge themselves as who is the strongest and the weakness. And if who ever wins the competition. That animal who lose will been eaten. Or if the animal like elephant can't eat meat. What the elephant do is left the carnivore animal which is the wolf. And now as the battle begins in session. The elephant challenges the wolf and not to swear. But only fight without fear. As the story ends, because of the elephant is the strongest one. And the wolf is the weakness animal in this part of a mighty forest. What the elephant do is to squish and crash the wolf. Until the wolf loses it's air to breathe. Along of the ending battle an elephant do is to choke the wolf with an elephant's hands. Then suddenly the wolf is dead. As the humble elephant wins the competitions. No ever eats the last elephant like him again. Because if you don't know the strength. You will be defeated by it's own weakness. That's why the elephant wins because he is enormous and strong than the wolf is weak. Because he is only slim and small than the elephant size which his belly is strong either. That's why the wolf defeated. And when the wolf is dead the elephant doing is that he throws quickly a wolf in the ocean. Then it's already feasted by the hungry great white sharks. Eats faster the wolf because of defeat. And at last when the elephant wins he breathes nervous. But after 1 minute because of elephant's courage to win. The mighty forest is safe now. No more carnivores like wolf anymore. Because the last wolf is killed by the last elephant who sacrifice it's life for it's own common ground. Moral Lesson: You should imagine the strong and who is the weak. So that when the battle begins to approach. There is a certain pattern to deceive. And that is the weakness. Once you don't know your strength and weakens. You never been strong. That's why you will lose for pride. But if you know your strength and weakness. You can easily know how to defeat it. By only change the body to become strong than weak. You must achieve the certain goal in not hasting and rush. So that when the enemy came to battle. It is easy for you to know how to defeat it. By knowing the opponents strength and weakness.
+</div>
+<center><button onclick="start()">▶ PLAY ULTIMATE FUN V2 - GOD OF WAR STYLE!</button>
+<p style="color:#ffff00;font-weight:900;margin-top:10px;font-size:14px">🐘 SUPER LAKAS! Click = SQUISH CRASH CHOKE! E = THROW OCEAN SHARKS! SPACE = BELLY STOMP!</p></center>
+</div>
+</div>
+
+<div class="hud" id="hudL">
+<div class="gold" style="font-size:17px">🐘 Elephant - Enormous Strong Belly Strong</div>
+<div>Strength 💪 <div class="bar"><div id="eleBar" class="fill" style="width:100%;background:linear-gradient(90deg,#55ff00,#ffff00)"></div></div></div>
+<div>Wolf HP 🐺 <div class="bar"><div id="wolfBar" class="fill" style="width:100%;background:#ff2222"></div></div></div>
+<div style="font-size:13px;margin-top:8px">Stamina: <span id="stam">100%</span> | Ocean: <span id="ocean">Ready</span> 🌊</div>
+<div id="mission" style="margin-top:10px;background:rgba(85,255,0,0.22);padding:10px;border-radius:10px;font-size:12px;line-height:1.4"></div>
+</div>
+
+<div class="hud" id="hudR">
+<div class="gold" id="qm">QUEST: Hey you! Wolf why attacking me! What is your intention?</div>
+<div id="qd" style="color:#bbffaa">Mighty forest lived An Elephant And The Wolf elephant strongest animal last animal mighty forest Suddenly strange living creature wolf planned attacked last elephant make it as dinner Elephant approaches also wolf Elephant said Hey you Wolf why are you attacking me What is your intention for Wolf said I want to eat you for dinner When reason have nothing to say They only revenge themselves as who is strongest and weakness If who ever wins competition That animal who lose will been eaten Or if animal like elephant can't eat meat What elephant do is left carnivore animal which is wolf And now as battle begins session Elephant challenges wolf and not to swear But only fight without fear As story ends because elephant strongest one And wolf weakness animal in this part mighty forest What elephant do is to squish and crash wolf Until wolf loses it's air to breathe Along ending battle elephant do is to choke wolf with elephant's hands Then suddenly wolf dead As humble elephant wins competitions No ever eats last elephant like him again Because if you don't know strength You will be defeated by it's own weakness That's why elephant wins because he is enormous and strong than wolf is weak Because he only slim and small than elephant size which his belly is strong either That's why wolf defeated And when wolf dead elephant doing is that he throws quickly wolf in ocean Then already feasted by hungry great white sharks Eats faster wolf because defeat And at last when elephant wins he breathes nervous But after 1 minute because elephant's courage to win Mighty forest is safe now No more carnivores like wolf anymore Because last wolf is killed by last elephant who sacrifice it's life for it's own common ground Moral You should imagine strong and who is weak So that when battle begins approach There is certain pattern to deceive And that is weakness Once you don't know your strength and weakens You never been strong That's why you will lose for pride But if you know your strength and weakness You can easily know how to defeat it By only change body to become strong than weak You must achieve certain goal in not hasting and rush So that when enemy came to battle It is easy for you to know how to defeat it By knowing opponents strength and weakness</div>
+</div>
+
+<div id="center"></div>
+<div id="controls">🎮 WASD Super Fast | SHIFT Charge | SPACE Belly Stomp Squish | Click Crash Choke | E Throw Ocean Sharks 🌊🦈 | Mouse Camera</div>
+
+<script type="module">
+import * as THREE from 'three';
+let scene,camera,renderer,keys={};
+let ST={ele:100,wolf:100,stam:100};
+let elephant,wolf,ocean,sharks=[];
+let yaw=0,pitch=0;
+window.start=()=>{document.getElementById('story').style.display='none';init();};
+function pop(msg,t=1600){let el=document.getElementById('center');el.innerHTML=msg;el.style.display='block';setTimeout(()=>el.style.display='none',t);}
+function init(){
+scene=new THREE.Scene();scene.fog=new THREE.Fog(0x0a1f0a,25,90);
+scene.background=new THREE.Color(0x0a1f0a);
+camera=new THREE.PerspectiveCamera(75,innerWidth/innerHeight,0.1,300);
+renderer=new THREE.WebGLRenderer({antialias:true});renderer.setSize(innerWidth,innerHeight);renderer.shadowMap.enabled=true;document.body.appendChild(renderer.domElement);
+scene.add(new THREE.AmbientLight(0xffffff,0.65));
+let sun=new THREE.DirectionalLight(0xffffff,1.3);sun.position.set(25,35,15);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);scene.add(sun);
+let ground=new THREE.Mesh(new THREE.PlaneGeometry(500,500),new THREE.MeshStandardMaterial({color:0x1a3a0a}));ground.rotation.x=-1.57;ground.receiveShadow=true;scene.add(ground);
+// Mighty forest - dense trees
+for(let i=0;i<100;i++){
+ let trunk=new THREE.Mesh(new THREE.CylinderGeometry(0.35,0.6,6,8),new THREE.MeshStandardMaterial({color:0x3a2a0a}));let x=(Math.random()-0.5)*140,z=(Math.random()-0.5)*140;if(Math.hypot(x,z)<12)continue;trunk.position.set(x,3,z);trunk.castShadow=true;scene.add(trunk);
+ let leaves=new THREE.Mesh(new THREE.SphereGeometry(2.2,8,6),new THREE.MeshStandardMaterial({color:0x0a5a0a}));leaves.position.set(x,6.5,z);scene.add(leaves);
+}
+// Ocean - big blue for sharks
+ocean=new THREE.Mesh(new THREE.PlaneGeometry(100,100),new THREE.MeshStandardMaterial({color:0x0a2a6a,roughness:0.2}));ocean.rotation.x=-1.57;ocean.position.set(60,0.15,0);scene.add(ocean);
+for(let i=0;i<4;i++){
+ let s=new THREE.Group();
+ let body=new THREE.Mesh(new THREE.BoxGeometry(3.5,1,1.2),new THREE.MeshStandardMaterial({color:0x2a3a4a}));body.position.y=0.5;s.add(body);
+ let fin=new THREE.Mesh(new THREE.ConeGeometry(0.5,1,4),new THREE.MeshStandardMaterial({color:0x1a2a3a}));fin.position.y=1.2;s.add(fin);
+ let teeth=new THREE.Mesh(new THREE.BoxGeometry(0.6,0.3,0.8),new THREE.MeshStandardMaterial({color:0xffffff}));teeth.position.set(1.8,0.3,0);s.add(teeth);
+ s.position.set(60+(Math.random()-0.5)*15,0.2,(Math.random()-0.5)*15);scene.add(s);sharks.push(s);
+}
+// Elephant - SUPER BIG - player
+elephant=new THREE.Group();
+let eBody=new THREE.Mesh(new THREE.BoxGeometry(2.2,1.4,2.6),new THREE.MeshStandardMaterial({color:0x888888}));eBody.position.y=1.2;eBody.castShadow=true;elephant.add(eBody);
+let eHead=new THREE.Mesh(new THREE.SphereGeometry(0.85,14,12),new THREE.MeshStandardMaterial({color:0x888888}));eHead.position.set(1.7,1.4,0);elephant.add(eHead);
+let eTrunk=new THREE.Mesh(new THREE.CylinderGeometry(0.18,0.32,1.5,10),new THREE.MeshStandardMaterial({color:0x777777}));eTrunk.position.set(2.4,0.9,0);eTrunk.rotation.z=1.57;elephant.add(eTrunk);
+let eEar1=new THREE.Mesh(new THREE.CircleGeometry(0.7,10),new THREE.MeshStandardMaterial({color:0x666666,side:2}));eEar1.position.set(1.2,1.6,1.1);eEar1.rotation.y=0.8;elephant.add(eEar1);
+let eEar2=eEar1.clone();eEar2.position.set(1.2,1.6,-1.1);elephant.add(eEar2);
+elephant.position.set(-12,0,0);scene.add(elephant);
+// Wolf - small slim
+wolf=new THREE.Group();
+let wBody=new THREE.Mesh(new THREE.BoxGeometry(1.1,0.55,0.55),new THREE.MeshStandardMaterial({color:0x4a4a4a}));wBody.position.y=0.55;wBody.castShadow=true;wolf.add(wBody);
+let wHead=new THREE.Mesh(new THREE.SphereGeometry(0.38,10,8),new THREE.MeshStandardMaterial({color:0x4a4a4a}));wHead.position.set(0.8,0.65,0);wolf.add(wHead);
+let wSnout=new THREE.Mesh(new THREE.BoxGeometry(0.55,0.22,0.22),new THREE.MeshStandardMaterial({color:0x111111}));wSnout.position.set(1.15,0.6,0);wolf.add(wSnout);
+let wTail=new THREE.Mesh(new THREE.CylinderGeometry(0.06,0.18,0.7,6),new THREE.MeshStandardMaterial({color:0x4a4a4a}));wTail.position.set(-0.7,0.65,0);wTail.rotation.z=0.6;wolf.add(wTail);
+let wEye=new THREE.Mesh(new THREE.SphereGeometry(0.07,6,4),new THREE.MeshStandardMaterial({color:0xff0000}));wEye.position.set(0.9,0.75,0.15);wolf.add(wEye);
+wolf.position.set(12,0,0);wolf.userData={hp:100,dead:false};scene.add(wolf);
+
+camera.position.set(-14,4,6);
+window.addEventListener('keydown',e=>{
+ keys[e.key.toLowerCase()]=true;
+ if(e.code=='Space'){stomp();}
+ if(e.key.toLowerCase()=='e'){throwToOcean();}
+});
+window.addEventListener('keyup',e=>keys[e.key.toLowerCase()]=false);
+renderer.domElement.addEventListener('click',()=>renderer.domElement.requestPointerLock());
+window.addEventListener('mousemove',e=>{if(document.pointerLockElement){yaw-=e.movementX*0.0035;pitch-=e.movementY*0.0035;pitch=Math.max(-0.9,Math.min(0.9,pitch));}});
+window.addEventListener('mousedown',e=>{if(e.button==0){punch();}});
+function punch(){
+ if(wolf.position.distanceTo(elephant.position)<5){
+  wolf.userData.hp-=28;ST.wolf=Math.max(0,wolf.userData.hp);
+  wolf.position.add(new THREE.Vector3((Math.random()-0.5)*1,0.3,(Math.random()-0.5)*1));
+  wolf.rotation.x=(Math.random()-0.5)*0.8;wolf.rotation.z=(Math.random()-0.5)*0.8;
+  elephant.position.x+=0.25;
+  if(wolf.userData.hp<=70&&wolf.userData.hp>50)pop('💥 SQUISH! Crash wolf! Loses air breathe!',1200);
+  else if(wolf.userData.hp<=50&&wolf.userData.hp>20)pop('💥 CRASH! Enormous strong belly strong! Slim small wolf!',1200);
+  else if(wolf.userData.hp<=20&&wolf.userData.hp>0)pop('🤜 CHOKE with elephant hands! Wolf dying!',1400);
+  else if(wolf.userData.hp<=0){wolf.userData.dead=true;pop('💀 Wolf DEAD! Now E Throw Ocean Sharks!',1800);}
+ }else pop('Closer! Hey you! Wolf why attacking me! What intention?',1000);
+}
+function stomp(){
+ if(wolf.position.distanceTo(elephant.position)<6){
+  wolf.userData.hp-=20;ST.wolf=Math.max(0,wolf.userData.hp);
+  wolf.position.y=1.2;setTimeout(()=>wolf.position.y=0,300);
+  pop('🐘 BELLY STOMP! Squish crash! Belly strong either!',1000);
+  if(wolf.userData.hp<=0)wolf.userData.dead=true;
+ }
+}
+function throwToOcean(){
+ if(wolf.userData.dead&&wolf.position.distanceTo(elephant.position)<6){
+  pop('🌊 THROWS quickly wolf in ocean! Hungry great white sharks eats faster! 🌊🦈',2200);
+  let target=ocean.position.clone();target.y=2;
+  let start=wolf.position.clone();
+  let t=0;
+  let anim=setInterval(()=>{
+   t+=0.06;wolf.position.lerpVectors(start,target,t);wolf.rotation.x+=0.3;wolf.rotation.y+=0.2;
+   if(t>=1){clearInterval(anim);sharks.forEach(s=>{s.position.lerp(wolf.position,0.6);s.scale.setScalar(1.6);});setTimeout(()=>win(),700);}
+  },30);
+ }else if(!wolf.userData.dead)pop('Kill wolf first! Click Squish Crash Choke until dead! Then E throw ocean!',1400);
+ else pop('Go near dead wolf! Then E throw ocean sharks!',1200);
+}
+function win(){
+ document.getElementById('qm').innerText='WIN! Mighty Forest Safe! No More Carnivores Like Wolf!';
+ document.getElementById('qd').innerHTML='Because elephant strongest one And wolf weakness animal in this part mighty forest What elephant do is to squish and crash wolf Until wolf loses air to breathe Along ending battle elephant do is to choke wolf with elephant hands Then suddenly wolf dead As humble elephant wins competitions No ever eats last elephant like him again Because if you don\'t know strength You will be defeated by it\'s own weakness That\'s why elephant wins because he is enormous and strong than wolf is weak Because he only slim and small than elephant size which his belly is strong either That\'s why wolf defeated And when wolf dead elephant doing is that he throws quickly wolf in ocean Then already feasted by hungry great white sharks Eats faster wolf because defeat And at last when elephant wins he breathes nervous But after 1 minute because elephant\'s courage to win Mighty forest is safe now No more carnivores like wolf anymore Because last wolf is killed by last elephant who sacrifice it\'s life for it\'s own common ground<br><b>Moral: You should imagine strong and who is weak So that when battle begins approach There is certain pattern to deceive And that is weakness Once you don\'t know your strength and weakens You never been strong That\'s why you will lose for pride But if you know your strength and weakness You can easily know how to defeat it</b>';
+ setTimeout(()=>alert('YOU WIN ULTIMATE FUN V2! Mighty forest lived An Elephant And The Wolf elephant strongest animal last animal mighty forest Suddenly strange living creature wolf planned attacked last elephant make it as dinner Elephant approaches also wolf Elephant said Hey you Wolf why attacking me What is your intention for Wolf said I want to eat you for dinner When reason have nothing to say They only revenge themselves as who is strongest and weakness If who ever wins competition That animal who lose will been eaten Or if animal like elephant can\'t eat meat What elephant do is left carnivore animal which is wolf And now as battle begins session Elephant challenges wolf and not to swear But only fight without fear As story ends because elephant strongest one And wolf weakness animal in this part mighty forest What elephant do is to squish and crash wolf Until wolf loses air to breathe Along ending battle elephant do is to choke wolf with elephant hands Then suddenly wolf dead As humble elephant wins competitions No ever eats last elephant like him again Because if you don\'t know strength You will be defeated by it\'s own weakness That\'s why elephant wins because he is enormous and strong than wolf is weak Because he only slim and small than elephant size which his belly is strong either That\'s why wolf defeated And when wolf dead elephant doing is that he throws quickly wolf in ocean Then already feasted by hungry great white sharks Eats faster wolf because defeat And at last when elephant wins he breathes nervous But after 1 minute because elephant\'s courage to win Mighty forest is safe now No more carnivores like wolf anymore Because last wolf is killed by last elephant who sacrifice it\'s life for it\'s own common ground Moral You should imagine strong and who is weak So that when battle begins approach There is certain pattern to deceive And that is weakness Once you don\'t know your strength and weakens You never been strong That\'s why you will lose for pride But if you know your strength and weakness You can easily know how to defeat it By only change body to become strong than weak You must achieve certain goal in not hasting and rush So that when enemy came to battle It is easy for you to know how to defeat it By knowing opponents strength and weakness'),500);
+}
+loop();
+}
+function loop(){
+ requestAnimationFrame(loop);
+ let speed=0.26;if(keys['shift'])speed=0.48;
+ let mv=new THREE.Vector3();if(keys['w'])mv.z=-1;if(keys['s'])mv.z=1;if(keys['a'])mv.x=-1;if(keys['d'])mv.x=1;
+ if(mv.length()>0){mv.normalize().multiplyScalar(speed);let q=new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0,1,0),yaw);mv.applyQuaternion(q);elephant.position.add(mv);elephant.rotation.y=Math.atan2(mv.x,mv.z);ST.stam=Math.max(0,ST.stam-0.06);}else ST.stam=Math.min(100,ST.stam+0.18);
+ if(!wolf.userData.dead){
+  let dir=new THREE.Vector3().subVectors(elephant.position,wolf.position);dir.y=0;let dist=dir.length();
+  if(dist>3&&dist<30){dir.normalize().multiplyScalar(0.07);wolf.position.add(dir);wolf.lookAt(elephant.position);}
+  if(dist<2.2){ST.ele=Math.max(0,ST.ele-0.18);}
+  wolf.position.y=Math.max(0,wolf.position.y-0.08);wolf.rotation.x*=0.9;wolf.rotation.z*=0.9;
+ }
+ sharks.forEach(s=>{s.rotation.y+=0.01;if(wolf.userData.dead)s.position.lerp(wolf.position,0.02);});
+
+ let camOff=new THREE.Vector3(0,4.5+pitch*2,9).applyQuaternion(new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0,1,0),yaw));
+ let camPos=elephant.position.clone().add(camOff);camera.position.lerp(camPos,0.14);camera.lookAt(elephant.position.clone().add(new THREE.Vector3(0,1.2,0)));
+
+ document.getElementById('eleBar').style.width=ST.ele+'%';
+ document.getElementById('wolfBar').style.width=ST.wolf+'%';
+ document.getElementById('stam').innerText=Math.round(ST.stam)+'%';
+ document.getElementById('mission').innerHTML=
+   ST.wolf>65?`🎯 QUEST 1: Hey you Wolf why attacking me! What intention for?<br>Wolf: I want eat you for dinner! Revenge strongest weakness! Competition loser will been eaten!<br>WASD Move Elephant enormous strong | Click SQUISH CRASH! | SPACE Belly Stomp!`:
+   ST.wolf>0?`🎯 QUEST 2: Squish and crash wolf! Until loses air breathe!<br>Choke wolf with elephant hands! Slim small than elephant size belly strong either!<br>Keep Click! SPACE Stomp! Wolf HP ${Math.round(ST.wolf)}%`:
+   `🎯 FINAL: Wolf dead! Throw quickly wolf in ocean! Hungry great white sharks eats faster!<br>Go near dead wolf + E Throw! Mighty forest safe now! No more carnivores!`;
+
+ if(ST.ele<=0){alert('Game Over! Elephant loses! You should imagine strong and who is weak! When battle begins approach There is certain pattern to deceive And that is weakness! Once you don\'t know your strength and weakens You never been strong! That\'s why you will lose for pride!');location.reload();}
+ renderer.render(scene,camera);
+}
+</script>
+</body>
+</html>
